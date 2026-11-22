@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "shipwright:block/ship_core"
+    }
+  }
+}

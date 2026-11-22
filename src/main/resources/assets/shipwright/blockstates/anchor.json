@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "dropped=false,facing=north": {
+      "model": "shipwright:block/anchor"
+    },
+    "dropped=true,facing=north": {
+      "model": "shipwright:block/anchor_dropped"
+    },
+    "dropped=false,facing=east": {
+      "model": "shipwright:block/anchor",
+      "y": 90
+    },
+    "dropped=true,facing=east": {
+      "model": "shipwright:block/anchor_dropped",
+      "y": 90
+    },
+    "dropped=false,facing=south": {
+      "model": "shipwright:block/anchor",
+      "y": 180
+    },
+    "dropped=true,facing=south": {
+      "model": "shipwright:block/anchor_dropped",
+      "y": 180
+    },
+    "dropped=false,facing=west": {
+      "model": "shipwright:block/anchor",
+      "y": 270
+    },
+    "dropped=true,facing=west": {
+      "model": "shipwright:block/anchor_dropped",
+      "y": 270
+    }
+  }
+}

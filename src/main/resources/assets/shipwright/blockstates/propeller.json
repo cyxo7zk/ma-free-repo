@@ -1,0 +1,96 @@
+{
+  "variants": {
+    "facing=north,frame=0": {
+      "model": "shipwright:block/propeller_0"
+    },
+    "facing=north,frame=1": {
+      "model": "shipwright:block/propeller_1"
+    },
+    "facing=north,frame=2": {
+      "model": "shipwright:block/propeller_2"
+    },
+    "facing=north,frame=3": {
+      "model": "shipwright:block/propeller_3"
+    },
+    "facing=east,frame=0": {
+      "model": "shipwright:block/propeller_0",
+      "y": 90
+    },
+    "facing=east,frame=1": {
+      "model": "shipwright:block/propeller_1",
+      "y": 90
+    },
+    "facing=east,frame=2": {
+      "model": "shipwright:block/propeller_2",
+      "y": 90
+    },
+    "facing=east,frame=3": {
+      "model": "shipwright:block/propeller_3",
+      "y": 90
+    },
+    "facing=south,frame=0": {
+      "model": "shipwright:block/propeller_0",
+      "y": 180
+    },
+    "facing=south,frame=1": {
+      "model": "shipwright:block/propeller_1",
+      "y": 180
+    },
+    "facing=south,frame=2": {
+      "model": "shipwright:block/propeller_2",
+      "y": 180
+    },
+    "facing=south,frame=3": {
+      "model": "shipwright:block/propeller_3",
+      "y": 180
+    },
+    "facing=west,frame=0": {
+      "model": "shipwright:block/propeller_0",
+      "y": 270
+    },
+    "facing=west,frame=1": {
+      "model": "shipwright:block/propeller_1",
+      "y": 270
+    },
+    "facing=west,frame=2": {
+      "model": "shipwright:block/propeller_2",
+      "y": 270
+    },
+    "facing=west,frame=3": {
+      "model": "shipwright:block/propeller_3",
+      "y": 270
+    },
+    "facing=up,frame=0": {
+      "model": "shipwright:block/propeller_0",
+      "x": 270
+    },
+    "facing=up,frame=1": {
+      "model": "shipwright:block/propeller_1",
+      "x": 270
+    },
+    "facing=up,frame=2": {
+      "model": "shipwright:block/propeller_2",
+      "x": 270
+    },
+    "facing=up,frame=3": {
+      "model": "shipwright:block/propeller_3",
+      "x": 270
+    },
+    "facing=down,frame=0": {
+      "model": "shipwright:block/propeller_0",
+      "x": 90
+    },
+    "facing=down,frame=1": {
+      "model": "shipwright:block/propeller_1",
+      "x": 90
+    },
+    "facing=down,frame=2": {
+      "model": "shipwright:block/propeller_2",
+      "x": 90
+    },
+    "facing=down,frame=3": {
+      "model": "shipwright:block/propeller_3",
+      "x": 90
+    }
+  }
+}

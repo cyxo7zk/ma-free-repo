@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "shipwright",
+  "version": "${version}",
+  "name": "Shipwright",
+  "description": "Turn your builds into working ships: ship core, wheel, engines, shafts, propellers and anchors.",
+  "authors": ["You"],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.shipwright.Shipwright"]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": ">=26.3",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}

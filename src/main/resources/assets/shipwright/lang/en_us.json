@@ -1,0 +1,9 @@
+{
+  "block.shipwright.ship_core": "Ship Core",
+  "block.shipwright.ship_wheel": "Ship's Wheel",
+  "block.shipwright.engine": "Ship Engine",
+  "block.shipwright.shaft": "Drive Shaft",
+  "block.shipwright.propeller": "Propeller",
+  "block.shipwright.anchor": "Ship Anchor",
+  "container.shipwright.engine": "Ship Engine (fuel)"
+}

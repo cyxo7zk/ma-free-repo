@@ -1,0 +1,9 @@
+{
+  "values": [
+    "shipwright:ship_core",
+    "shipwright:engine",
+    "shipwright:shaft",
+    "shipwright:propeller",
+    "shipwright:anchor"
+  ]
+}

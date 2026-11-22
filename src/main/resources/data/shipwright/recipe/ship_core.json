@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "IGI",
+    "PCP",
+    "III"
+  ],
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "G": "minecraft:gold_ingot",
+    "P": "#minecraft:planks",
+    "C": "minecraft:compass"
+  },
+  "result": {
+    "id": "shipwright:ship_core",
+    "count": 1
+  }
+}

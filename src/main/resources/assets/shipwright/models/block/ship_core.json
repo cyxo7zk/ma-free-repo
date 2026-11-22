@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "shipwright:block/ship_core_top",
+    "side": "shipwright:block/ship_core_side"
+  }
+}

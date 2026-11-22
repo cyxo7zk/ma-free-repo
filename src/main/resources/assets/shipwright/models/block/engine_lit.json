@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "top": "shipwright:block/engine_top",
+    "front": "shipwright:block/engine_front_lit",
+    "side": "shipwright:block/engine_side"
+  }
+}
