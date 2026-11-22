@@ -76,21 +76,20 @@ public class ShipCoreBlockEntity extends BlockEntity {
         ArmorStand seat = new ArmorStand(level, wheelPos.getX() + 0.5, wheelPos.getY() + SEAT_Y_OFFSET, wheelPos.getZ() + 0.5);
         seat.setInvisible(true);
         seat.setNoGravity(true);
-        seat.setInvulnerable(true);
         seat.setSilent(true);
         seat.addTag(ShipMover.SEAT_TAG);
         level.addFreshEntity(seat);
 
         if (!player.startRiding(seat)) {
             seat.discard();
-            player.displayClientMessage(Component.literal("Stand up (not sneaking) and use the wheel again."), true);
+            player.sendOverlayMessage(Component.literal("Stand up (not sneaking) and use the wheel again."));
             return;
         }
         seatId = seat.getUUID();
         throttle = 0f;
         zeroHold = 0;
         moveProgress = 0;
-        player.displayClientMessage(Component.literal("At the helm: W/S throttle, A/D turn, Space stop, Shift leave."), true);
+        player.sendOverlayMessage(Component.literal("At the helm: W/S throttle, A/D turn, Space stop, Shift leave."));
     }
 
     private void discardSeat(ServerLevel level) {
@@ -147,7 +146,7 @@ public class ShipCoreBlockEntity extends BlockEntity {
             Input in = helm.getLastClientInput();
             updateThrottle(in);
 
-            if (tickCount % 4 == 0) helm.displayClientMessage(hud(), true);
+            if (tickCount % 4 == 0) helm.sendOverlayMessage(hud());
 
             // Turning
             if (turnCooldown == 0 && (in.left() != in.right())) {
@@ -196,7 +195,7 @@ public class ShipCoreBlockEntity extends BlockEntity {
     private void warn(ServerPlayer helm, String text) {
         if (tickCount - lastWarnTick < 30) return;
         lastWarnTick = tickCount;
-        helm.displayClientMessage(Component.literal(text).withStyle(ChatFormatting.RED), true);
+        helm.sendOverlayMessage(Component.literal(text).withStyle(ChatFormatting.RED));
     }
 
     // ---------------------------------------------------------------------------------------
@@ -294,7 +293,8 @@ public class ShipCoreBlockEntity extends BlockEntity {
         return c;
     }
 
-    public void report(ServerLevel level, Player player) {
+    public void report(ServerLevel level, Player p) {
+        if (!(p instanceof ServerPlayer player)) return;
         ship = ShipScanner.scan(level, worldPosition);
         power = ship.truncated ? PowerNetwork.Result.NONE : PowerNetwork.evaluate(level, ship);
         String text = ship.truncated
@@ -303,7 +303,7 @@ public class ShipCoreBlockEntity extends BlockEntity {
                 + " | Propellers: " + power.poweredCount() + "/" + power.props() + " powered"
                 + " | Anchors: " + ship.anchorsDown + "/" + ship.anchors + " down"
                 + " | " + (ship.afloat() ? "Afloat" : "Not in water");
-        player.displayClientMessage(Component.literal(text), false);
+        player.sendSystemMessage(Component.literal(text));
     }
 
     // ---------------------------------------------------------------------------------------

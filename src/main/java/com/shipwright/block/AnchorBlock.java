@@ -61,16 +61,16 @@ public class AnchorBlock extends Block {
 
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
-        if (level.isClientSide()) return InteractionResult.SUCCESS;
+        if (level.isClientSide() || !(player instanceof net.minecraft.server.level.ServerPlayer)) return InteractionResult.SUCCESS;
 
         boolean dropping = !state.getValue(DROPPED);
         if (dropping && !hasSeabed(level, pos)) {
-            player.displayClientMessage(Component.literal("The anchor finds nothing to hold on to."), true);
+            ((net.minecraft.server.level.ServerPlayer) player).sendOverlayMessage(Component.literal("The anchor finds nothing to hold on to."));
             return InteractionResult.SUCCESS;
         }
         level.setBlock(pos, state.setValue(DROPPED, dropping), Block.UPDATE_ALL);
         level.playSound(null, pos, SoundEvents.ANVIL_PLACE, SoundSource.BLOCKS, 0.7f, dropping ? 0.6f : 1.2f);
-        player.displayClientMessage(Component.literal(dropping ? "Anchor dropped." : "Anchor raised."), true);
+        ((net.minecraft.server.level.ServerPlayer) player).sendOverlayMessage(Component.literal(dropping ? "Anchor dropped." : "Anchor raised."));
         return InteractionResult.SUCCESS;
     }
 

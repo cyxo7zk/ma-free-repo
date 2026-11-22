@@ -62,6 +62,11 @@ public class EngineBlockEntity extends BaseContainerBlockEntity {
     }
 
     @Override
+    public int getContainerSize() {
+        return SIZE;
+    }
+
+    @Override
     protected Component getDefaultName() {
         return Component.translatable("container.shipwright.engine");
     }

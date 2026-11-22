@@ -65,7 +65,7 @@ public class ShipWheelBlock extends Block {
 
         ShipCoreBlockEntity core = ShipScanner.findCore(sl, pos);
         if (core == null) {
-            sp.displayClientMessage(Component.literal("This wheel is not attached to a Ship Core."), true);
+            sp.sendOverlayMessage(Component.literal("This wheel is not attached to a Ship Core."));
             return InteractionResult.SUCCESS;
         }
         core.takeWheel(sl, sp, pos);

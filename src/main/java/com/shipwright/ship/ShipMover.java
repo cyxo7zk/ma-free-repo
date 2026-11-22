@@ -148,7 +148,7 @@ public final class ShipMover {
 
     private static boolean onShip(Entity e, ShipScanner.Ship ship) {
         if (e.isSpectator()) return false;
-        if (e.getTags().contains(SEAT_TAG)) return true;
+        if (e instanceof net.minecraft.world.entity.decoration.ArmorStand a && a.isInvisible() && a.isNoGravity()) return true;
         BlockPos bp = e.blockPosition();
         long k = bp.asLong();
         return ship.hullSet.contains(k) || ship.interiorSet.contains(k) || ship.hullSet.contains(bp.below().asLong());
